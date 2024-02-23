@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Global Styles */
+  html {
+    @apply overflow-x-hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply transition-element m-0 overflow-x-hidden p-0 font-rubik text-indigo-600;
+  }
+
+  img {
+    @apply max-w-full select-none;
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-touch-callout: none;
+  }
+
+  button,
+  input {
+    @apply focus:outline-none;
+  }
+
+  ol,
+  ul {
+    list-style: initial;
+  }
+
+  select {
+    @apply outline-none focus:outline-none;
+  }
+
+  p {
+    @apply !block whitespace-pre-line font-ibm text-base font-medium;
+  }
+
+  /* Selection Color */
+  ::selection {
+    @apply bg-indigo-300;
+  }
+
+  ::-moz-selection {
+    @apply bg-indigo-300;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .button {
+    @apply button-styles h-[34px] gap-2 border-b-[6px]
+    bg-white bg-[url("/assets/icons/arrow-right.svg")] bg-[length:15px_10px] bg-[right_20px_center] 
+    py-1.5 pl-5 pr-[43px] outline outline-[3px] outline-indigo-600 
+    focus:outline focus:outline-[3px] focus:outline-offset-0 focus:outline-indigo-600 group-hover:text-magenta-500;
+  }
+
+  /* Cards */
+  .card {
+    @apply transition-element relative z-10 flex h-full w-full max-w-[500px] cursor-pointer flex-col 
+    border-[6px] border-indigo-600 bg-gradient-teal p-0 !duration-150 hover:shadow-aqua;
+  }
+
+  .card-blue-dots {
+    @apply before:absolute before:-right-[53px] before:-top-[33px] before:h-[63px] before:w-[226px] 
+    before:bg-[url('/assets/svgs/blue-dots-top.svg')] before:bg-no-repeat before:content-[''] 
+    after:absolute after:-bottom-[33px] after:-left-[49px] after:h-[63px] after:w-[226px] 
+    after:bg-[url('/assets/svgs/blue-dots-bottom.svg')] after:bg-no-repeat after:content-[''];
+  }
+
+  /* Backgrounds */
+  .bg {
+    @apply min-h-screen bg-empty-image bg-cover bg-fixed bg-center bg-no-repeat;
+  }
+}
+
+@layer utilities {
+  .button-styles {
+    @apply transition-element flex w-fit cursor-pointer items-center justify-center border-aquamarine-400 
+    bg-no-repeat font-extrabold uppercase transition-transform disabled:pointer-events-none disabled:opacity-50 group-hover:translate-x-1;
+  }
+
+  .transition-element {
+    @apply transition-all duration-75 ease-linear;
+  }
+}
+
+/* Custom Scrollbar  */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2bfae1 transparent;
+}
+
+/* Chrome, Edge, and Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 9px !important;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin-right: 4px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  border: none !important;
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+
+::-webkit-scrollbar-thumb {
+  border-right: 4px transparent solid;
+  background-clip: padding-box;
+  border-radius: 8px;
+  background-color: #2bfae1;
+  padding-top: 8px;
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #20e5ce;
+}
