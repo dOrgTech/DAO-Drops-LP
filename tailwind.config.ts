@@ -16,6 +16,9 @@ const config: Config = {
         'empty-image': "url('/assets/backgrounds/bg-empty.webp')",
         'gradient-teal': 'radial-gradient(181.84% 156.49% at 3.28% 0%, #fff 0%, #cbfef7 100%)',
       },
+      animation: {
+        'bounce-slow': 'bounce 3s infinite',
+      },
       colors: {
         indigo: {
           100: '#F1EFFF',

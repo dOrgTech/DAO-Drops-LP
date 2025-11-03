@@ -8,6 +8,10 @@ const projectsConfig: ProjectType[] = [
     description:
       'DAO Drops Round 1 was a retroactive funding experiment that enabled thousands of Ethereum users to influence the allocation of ecosystem funds through weighted voting.',
     buttonText: 'VISIT APP',
+    notification: {
+      text: 'Upgraded & fully forkable version now available!',
+      link: 'https://github.com/dOrgTech/DAO-Drops/tree/fork',
+    },
   },
   {
     url: 'https://pairdrop.daodrops.io',
