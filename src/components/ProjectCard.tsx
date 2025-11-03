@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: { project: ProjectType }) {
       </a>
 
       {project.notification && (
-        <div className='animate-bounce-slow absolute -top-24 left-1/2 z-10 -translate-x-1/2'>
+        <div className='absolute -top-24 left-1/2 z-10 -translate-x-1/2'>
           <a
             href={project.notification.link}
             target='_blank'
